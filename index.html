@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rater</title>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="stylesheet" href="style.css">
+  <script src="tools.js"></script>
+  <script src="imdb.js"></script>
+
+</head>
+
+<body>
+  <div class="header" id="header">
+    <a href="#default" class="logo"><a id="logoHolder" onclick="openNav();"><img id="ruLogo" src="logo.png"
+          width="40px"></a>
+      <div class="header-right">
+        <a onclick="openAdd()" id="plusAndX">+</a>
+      </div>
+  </div>
+
+
+  <!-- add movie -->
+
+  <div id="addMovie">
+    <input id="movieSubmit" placeholder="Title" onkeydown="changeFocus(event);">
+    <input id="scoreSubmit" placeholder="Score" onkeydown="subCheckDown(event)" onkeyup="subCheck(event)">
+  </div>
+
+  <script>
+    function changeFocus() {
+      if (event.keyCode === 13) {
+        document.getElementById("scoreSubmit").style.visibility = "visible";
+        document.getElementById("scoreSubmit").style.height = "50px";
+        document.getElementById("scoreSubmit").style.padding = "20px 10px 20px 10px";
+        setTimeout(function () { document.getElementById("scoreSubmit").focus(); }, 10)
+
+      }
+    }
+    function subCheck() {
+
+      if (event.keyCode >= 48 && event.keyCode <= 57) {
+        if (!(document.getElementById("scoreSubmit").value == "10")) {
+          if (document.getElementById("scoreSubmit").value.length > 1) {
+            document.getElementById("scoreSubmit").value = "";
+          }
+        }
+      } else if (event.keyCode !== 13) {
+        document.getElementById("scoreSubmit").value = "";
+      }
+
+    }
+    function subCheckDown() {
+      if (event.keyCode === 13) {
+        var name = document.getElementById("movieSubmit").value;
+        var score = document.getElementById("scoreSubmit").value;
+        infoToAdd(name, score);
+        name = "";
+        score = "";
+
+      }
+    }
+
+  </script>
+
+
+
+  <!-- image -->
+  <div class="images">
+    <img id="moviePoster" src="" class="imgcrop" width="50%">
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- movie list -->
+  <div id="movies">
+    <div class="movieContainer">
+      <span id="1" class="movieTitle" onmouseover="showImg(this)" onmouseout="hideImg(this)">Midsommar</span><sup
+        class="movieRating">6</sup></div>
+
+    <div class="movieContainer">
+      <span id="2" class="movieTitle" onmouseover="showImg(this)" onmouseout="hideImg(this)">Really Long Title
+        Wow</span><sup class="movieRating">8</sup></div>
+
+    <div class="movieContainer">
+      <span id="3" class="movieTitle" onmouseover="showImg(this)" onmouseout="hideImg(this)">A Silent Voice</span><sup
+        class="movieRating">7</sup></div>
+  </div>
+  <script>loadMovies();</script>
+
+  <a href="index.html">refresh</a>
+
+  <!-- navigation -->
+  <div id="navBar">
+    <div id="content">
+      <div class="dropdown">
+        <button class="dropbtn"><span id="navEle"> Sort By </span></button>
+        <div class="dropdown-content">
+          <a href="#">Rating</a>
+          <a href="#">Date Added</a>
+        </div>
+      </div>
+
+      <span id="navEle"> Import List </span>
+      <span id="navEle"> Export List </span>
+      <span id="navEle"> Github Page </span>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

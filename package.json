@@ -1,0 +1,22 @@
+{
+  "name": "rater",
+  "version": "1.0.0",
+  "description": "rate movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Daniel Rousseau",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.2"
+  },
+  "dependencies": {
+    "csvsync": "^1.3.2",
+    "imdb": "^1.1.0",
+    "imdb-api": "^4.2.0",
+    "imdb-node-api": "^0.1.0",
+    "node-fetch": "^2.6.1"
+  }
+}

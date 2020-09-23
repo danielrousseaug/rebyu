@@ -1,0 +1,296 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.imgcrop {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    z-index: -1;
+}
+
+.movieContainer {
+    padding-left: 30px;
+    margin-bottom: 3px;
+
+}
+
+.movieContainer:hover {
+    transition: 0.3s;
+    color: #595959;
+
+}
+
+.movieContainer sup {
+    margin-left: 6px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    vertical-align: top;
+    position: relative;
+    top: -0.1em;
+}
+
+.movieTitle {
+    font-size: 48px;
+}
+
+
+
+.movieTitle:hover {
+    cursor: pointer;
+}
+
+#rulogo {
+    transition: 2s;
+}
+
+#moviePoster {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+#addMovie {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    border: 0.5px solid black;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    padding-left: 15px;
+
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#navBar {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    border: 0.5px solid black;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    padding-left: 15px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+    height: 0;
+    width: 100%;
+    visibility: hidden;
+    text-align: center;
+    margin: auto;
+
+
+}
+
+#content {
+    margin: auto;
+    margin-bottom: 40%;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+#navEle {
+    margin: 20px;
+
+}
+
+#navEle {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+    position: relative;
+  }
+  #navEle:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  #navEle:hover:after { 
+    width: 50%; 
+    left: 23%; 
+  }
+  @media screen and (max-height: 300px) {
+      content {
+          margin-top: 40px;
+      }
+  }
+  
+
+
+#addMovie input {
+    vertical-align: middle;
+    background-color: black;
+    color: white;
+    font-size: 64px;
+    border-bottom: 2px solid white;
+
+}
+
+#addMovie input,
+input:focus {
+    outline: none;
+}
+
+#movieSubmit {
+    vertical-align: middle;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    width: 100%;
+
+
+}
+
+#scoreSubmit {
+    vertical-align: middle;
+    padding: 0px;
+    background-color: #fff;
+    border: none;
+    transition: height 0.5s;
+    width: 100%;
+    visibility: hidden;
+    height: 0;
+
+}
+
+#header{
+    transition: 0.25s;
+}
+
+.header {
+    position: fixed;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    padding: 20px 10px;
+    z-index: 3;
+    width: 100%;
+}
+
+/* Style the header links */
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 3px 12px 3px 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+    cursor: pointer;
+}
+
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+    padding-right: 25px;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 0px;
+    font-size: 24px;
+    border: none;
+    transition: 1s;
+    outline: none;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    transition: 1s;
+
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    text-align: left;
+    padding-left: 20px;
+    transition: 1s;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 0;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+}
