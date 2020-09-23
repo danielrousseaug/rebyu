@@ -29,6 +29,7 @@ Then, either use `npm start` to run from a commandline, or package into an appli
 ## Usage
 
 ![](usage.gif)
+
 Add movies with + button, import, export, and sort by clicking on the icon. Then scroll and enjoy your viewed movie collection.
 
 ## Contributing
